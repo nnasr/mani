@@ -14,25 +14,51 @@ def get_age():
     age = randint(0, 100)
     return age
 
+def get_at_work():
+    working = ['Yes', 'No']
+    at_work = random.choice(working)
+    return at_work
+
 
 def get_gender():
     genders = ['Male', 'Female']
     gender = random.choice(genders)
     return gender
 
+def get_birthdate():
+    birth1 = datetime.strptime('1/1/1940 1:30 PM', '%m/%d/%Y %I:%M %p')
+    birth2 = datetime.strptime('6/5/2019 1:30 PM', '%m/%d/%Y %I:%M %p')
+    birthdate = random_date(d1, d2)
+    return birthdate
 
-def get_cause_of_death():
+def get_body_disposal():
+    disposal_method = ['Burial', 'Incineration', 'Rendering', 'Composting', 'Other']
+    disposal = random.choice(disposal_method)
+    return disposal
+
+def autopsy_check():
+    autopsy_check = ['True', 'False']
+    autopsy_performed = random.choice(autopsy_check)
+    return autopsy_performed
+def certifier():
+
+def get_primary_cause_of_death():
+    primary_causes = [' abuse', ' overdose', '-related death']
+    primary_cause = "Opioid" + random.choice(primary_causes)
+    return primary_cause
+
+def get_underlying_causes_of_death():
     causes_of_death = ['Cardiac Arrest', 'Cardiopulmonary Arrest', 'Respiratory Arrest', 'Respiratory Failure',
                        'Failure to Thrive', 'Multi Organ/System Failure', 'Bronchopneumonia', 'Pulmonary Embolism',
                        'Acute Myocardial Infarct', 'Coagulopathy', 'Intercerebral Hemorrhage',
                        'Congestive Heart Failure', 'Liver Failure', 'Metastases', 'Trauma', 'Hemorrhage', 'Poisoning',
-                       'Disease', 'Abnormality', 'Injury']
-    cause_of_death = random.choice(causes_of_death)
-    return cause_of_death
+                       'Disease', 'Abnormality', 'Injury', 'Other', 'None']
+    underlying_cause_of_death = random.choice(causes_of_death)
+    return underlying_cause_of_death
 
 
 def get_race():
-    races = ['White', 'Black or African American', 'American Indian or Alaska Native', 'Asian Indian', 'Chinese',
+    races = ['White', 'Black or African American', 'American Indian or Alaska Native', 'Asian Indian', 'Chinese', 'Middle Eastern',
              'Filipino', 'Japanese', 'Korean', 'Vietnamese', 'Native Hawaiian', 'Guamanian or Chamorro', 'Samoan',
              'Other']
     race = random.choice(races)
@@ -74,11 +100,11 @@ def get_residence_state_county():
     return res_state, res_county
 
 
-def get_found_date():
-    d1 = datetime.strptime('1/1/1999 1:30 PM', '%m/%d/%Y %I:%M %p')
-    d2 = datetime.strptime('1/31/2019 1:30 PM', '%m/%d/%Y %I:%M %p')
+def death_date():
+    d1 = datetime.strptime('1/1/2014 1:30 PM', '%m/%d/%Y %I:%M %p')
+    d2 = datetime.strptime('1/7/2019 1:30 PM', '%m/%d/%Y %I:%M %p')
     found_date = random_date(d1, d2)
-    return found_date
+    return death_date
 
 
 def get_report_date(found_date):
