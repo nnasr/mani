@@ -5,8 +5,9 @@ import random
 from random import randint, randrange
 from datetime import timedelta, datetime
 from helper import counties
+from names import 
 
-API_ENDPOINT = "https://search-openmdi-h5yg5ya444yjixrgm7w25ifddi.us-east-1.es.amazonaws.com/openmdi-death-certificates/record"
+API_ENDPOINT = "https://search-openmdi-h5yg5ya444yjixrgm7w25ifddi.us-east-1.es.amazonaws.com/nnasr/mani"
 headers = {"Content-Type": "application/json"}
 
 
