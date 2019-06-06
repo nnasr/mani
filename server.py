@@ -5,7 +5,7 @@ import random
 from random import randint, randrange
 from datetime import timedelta, datetime
 from helper import counties
-from names import 
+from names import names_list
 
 API_ENDPOINT = "https://search-openmdi-h5yg5ya444yjixrgm7w25ifddi.us-east-1.es.amazonaws.com/nnasr/mani"
 headers = {"Content-Type": "application/json"}
@@ -41,8 +41,42 @@ def autopsy_check():
     autopsy_check = ['True', 'False']
     autopsy_performed = random.choice(autopsy_check)
     return autopsy_performed
-def certifier():
 
+def get_certifier_name():
+    certifier_name = []
+    for key, value in names_list.items():
+        certifier_name.append(random.choice(value) + ',' + key)
+
+    get_cert_name = random.choice(certifier_name)
+    return get_cert_name
+
+def get_check_how_injured():
+    injury_check = ['True', 'False']
+    injured = random.choice(injury_check)
+    how_injured = ['Shot', 'Stabbed', 'Muscular injury inflicted', 'Other injury inflicted']
+    by_whom = ['by themselves', 'by another person'] 
+    desc = []
+    desc_append = ""
+    if injured = "True": 
+        injury = ""
+            if how_injured = "Shot":
+                desc = ['using a handgun', 'using a semiautomatic weapon', 'using an automatic weapon', 'using an undetermined weapon']
+                desc_append = random.choice(desc)
+            else if how_injured = "Stabbed":
+                desc = ['using a knife', 'using a household object', 'using an unknown object'
+                desc_append = random.choice(desc)
+            else:
+                desc_append = ""
+        injury = "" + random.choice(how_injured) + radom.choice(by_whom) + desc_append        
+    else:
+        injury = "None"
+    return injury
+                        
+def get_check_injury_city
+    if get_check_how_injured() =! "None":
+                        
+                        
+                        
 def get_primary_cause_of_death():
     primary_causes = [' abuse', ' overdose', '-related death']
     primary_cause = "Opioid" + random.choice(primary_causes)
